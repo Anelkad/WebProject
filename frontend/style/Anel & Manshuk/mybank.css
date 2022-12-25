@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(203, 203, 203);
+    background-color: rgb(225, 225, 225);
     font-family:'Roboto',Arial, Helvetica, sans-serif;
 }
 
@@ -35,7 +35,7 @@ body{
     background-color: white;
     margin-bottom: 10px;
     height: 70px;
-    border: rgb(203, 203, 203) 1px solid;
+    border: rgb(225, 225, 225) 1px solid;
     border-radius: 10px;
 
 }
