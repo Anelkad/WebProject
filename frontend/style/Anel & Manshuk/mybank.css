@@ -79,6 +79,9 @@ body{
     border-radius: 5px;
     display: flex;
     flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .categories{
