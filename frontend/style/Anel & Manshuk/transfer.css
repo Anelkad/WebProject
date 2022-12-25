@@ -89,6 +89,8 @@ body{
     text-align: center;
     padding: 15px;
     font-size: 23px;
+    width: 100%;
+    border: none;
     border-radius: 10px;
 }
 
