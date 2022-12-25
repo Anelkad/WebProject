@@ -24,15 +24,15 @@ body{
     font-size: 20px;
     background-color: white;
     margin-bottom: 10px;
-    padding: 15px 0;
-    border: rgb(225, 225, 225) 1px solid;
+    height: 60px;
     border-radius: 10px;
+
 }
 
 #amount{
     font-size: 20px;
     background-color: white;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     margin-top: 40px;
     padding: 15px 0;
     border: rgb(225, 225, 225) 1px solid;
@@ -45,10 +45,35 @@ body{
 
 }
 
-input{
+.card img{
+    height: 30px;
+    border-radius: 3px;
+    padding: 15px 10px;
+}
+
+.top-text{
+    float: left;
+    padding-top: 20px;
+}
+
+.sum{
+    padding-top: 20px;
+    float: right;
+    padding-right: 10px;
+}
+
+.card input{
     width: 90%;
     border: none;
-    font-size: 22px;
+    font-size: 20px;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+
+#amount input{
+    width: 90%;
+    border: none;
+    font-size: 30px;
     padding: 0 10px;
 }
 
@@ -65,4 +90,50 @@ input{
     padding: 15px;
     font-size: 23px;
     border-radius: 10px;
+}
+
+#all-type{
+    text-align: center;
+    border: red 1px solid;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+.type{
+    padding:5px 0;
+    color: red;
+    display: inline-block;
+    width: 32%;
+}
+.type-r{
+    padding:5px 0;
+    background-color: red;
+    display: inline-block;
+    color:white;
+    width: 32%;
+}
+
+#msg input{
+    border: none;
+    width: 85%;
+    height: 100px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+#msg img{
+    border-radius: 50%;
+    margin-top: 70px;
+}
+
+.rakhmet{
+    display: inline-block;
+    border: rgba(143, 143, 143, 0.688) 1px solid;
+    padding: 5px 35px;
+    margin-top: 15px;
+    margin-right: 5px;
+    color: rgb(90, 90, 90);
+    font-size: 16px;
+    border-radius: 15px;
 }
