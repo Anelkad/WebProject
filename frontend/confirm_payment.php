@@ -31,15 +31,18 @@ session_start();
                 $my_user['first_name'] = $row['first_name'];
                 $my_user['last_name'] = $row['last_name'];
              }
-             $account_number=$_POST['account_number'];
-             $subcategory_id=$_SESSION['subcategory_id'];
-             $sql=mysqli_query($conn, "SELECT  title, img, id, total_cost FROM subcategories WHERE id='$subcategory_id'");
-$subcategories=array();
+            $account_number=$_POST['account_number'];
+            $subcategory_id=$_SESSION['subcategory_id'];
+
+            $sql=mysqli_query($conn, "SELECT  title, img, id, total_cost FROM subcategories WHERE id='$subcategory_id'");
+            $subcategories=array();
 
 while($row=mysqli_fetch_array($sql)){
+    $subcategories['id']=$row['id'];
     $subcategories['title']=$row['title'];
     $subcategories['total_cost']=$row['total_cost'];
 }
+    $payment_id = $subcategories['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +94,7 @@ while($row=mysqli_fetch_array($sql)){
         <hr>
         <p align="center" class="gray">Комиссия 0 ₸</p>
 
-        <div id="button">Подтвердить и оплатить <?php echo $subcategories['total_cost']?> ₸</div>
+        <a href="success_transfer.php?payment_id=<?php echo $payment_id;?>"><div id="button">Подтвердить и оплатить <?php echo $subcategories['total_cost']?> ₸</div></a>
     </div>
 </body>
 

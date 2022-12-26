@@ -36,11 +36,97 @@
             session_start();
             $total = $_SESSION['transfer_amount'];
             $my_user_id = $my_user['id'];
+            $date = date('d.m.Y H:i:s');
 
-            if(isset($_GET['id']) && $my_user_id!=$_GET['id']){
-                $recipient_id = $_GET['id'];
+            if(isset($_GET['payment_id'])){
+                $payment_id = $_GET['payment_id'];
+                $payment = array();
+                try { 
+                    $sql = "SELECT id,
+                    title, 
+                    total_cost
+                    FROM subcategories
+                    WHERE id = '$payment_id'";
+                   $result = mysqli_query($conn, $sql); 
+                } catch (mysqli_sql_exception $e) { 
+                   var_dump($e);
+                   exit; 
+                } 
+                
+                while ($row = mysqli_fetch_array($result)) {
+                    $payment['id'] = $row['id'];
+                    $payment['title'] = $row['title'];
+                    $payment['total_cost'] = $row['total_cost'];
+                 }
+
+                $total = $payment['total_cost'];
+                $type = $payment['title'];
+                mysqli_query($conn, "UPDATE users SET card_account = card_account - $total WHERE id=$my_user_id");
+                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount) VALUES ('$my_user_id','Платежи','$type','-','$date','$total')");
+                $ans = "<div id=\"green\">
+                Ваш платеж совершен.<br>
+                <span id=\"big\">$total ₸</span>
+                </div>
+                &nbsp;
+        
+                <div class=\"card white gray-color\">
+                    <span class=\"top-text\">Показать квитанцию</span>
+                </div>
+                
+                &nbsp;
+                <a href=\"categories_payments1.php\"><div id=\"button\">Вернуться в платежи</div></a>";
+            }else
+            if(isset($_GET['sender_id'])){
+                $sender_id = $_GET['sender_id'];
+                $cardnumber = $_SESSION['transfer_card'];
+                mysqli_query($conn, "UPDATE users SET card_account = card_account - $total WHERE id=$sender_id");
+                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount) VALUES ('$my_user_id','Перевод на другую карту','$cardnumber','-','$date','$total')");
+                
+                $ans = "<div id=\"green\">
+                Ваш перевод совершен.<br>
+                <span id=\"big\">$total ₸</span>
+                </div>
+                &nbsp;
+        
+                <div class=\"card white gray-color\">
+                    <span class=\"top-text\">Показать квитанцию</span>
+                </div>
+                
+                &nbsp;
+                <a href=\"transfer_to_other_card.php\"><div id=\"button\">Вернуться в переводы</div></a>";
+            }else
+            if(isset($_GET['recipient_id']) && $my_user_id!=$_GET['recipient_id']){
+                $recipient_id = $_GET['recipient_id'];
+                $recipient = array();
+
+                try { 
+                    $sql = "SELECT id,
+                    first_name, 
+                    last_name
+                    FROM users
+                    WHERE id = '$recipient_id'";
+                   $result = mysqli_query($conn, $sql); 
+                } catch (mysqli_sql_exception $e) { 
+                   var_dump($e);
+                   exit; 
+                } 
+                
+                while ($row = mysqli_fetch_array($result)) {
+                    $recipient['id'] = $row['id'];
+                    $recipient['first_name'] = $row['first_name'];
+                    $recipient['last_name'] = $row['last_name'];
+                 }
+                
+                $recipient_fullname = $recipient['first_name'].' '.$recipient['last_name'];
+                $sender_fullname = $my_user['first_name'].' '.$my_user['last_name'];
+
                 mysqli_query($conn, "UPDATE users SET card_account = card_account + $total WHERE id=$recipient_id");
                 mysqli_query($conn, "UPDATE users SET card_account = card_account - $total WHERE id=$my_user_id");
+
+                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount) VALUES ('$my_user_id','Переводы','$recipient_fullname','-','$date','$total')");
+                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount) VALUES ('$recipient_id','Пополнения','$sender_fullname','+','$date','$total')");
+                
+
                 $ans = "<div id=\"green\">
                 Ваш перевод совершен.<br>
                 <span id=\"big\">$total ₸</span>
@@ -56,9 +142,9 @@
             }
 
             else {
-                $ans = '<h1>Sorry</h1>
-                <p>Something went wrong.  
-                <a href="transfer_to_kaspi_card.php">Try again?</a></p>';
+                $ans = '<h1>Извините</h1>
+                <p>Похоже что-то пошло не так.  
+                <a href="transfer_to_kaspi_card.php">Вернуться?</a></p>';
             }
 ?>
 <!DOCTYPE html>
