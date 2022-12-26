@@ -35,7 +35,7 @@ while($row=mysqli_fetch_array($sql)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Платежи</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link href="style/Aidana/2.css" rel="stylesheet">
+    <link href="./style/Aidana/payments.css" rel="stylesheet">
 </head>
 
 <body>
