@@ -1,0 +1,120 @@
+body{
+    font-family: 'Roboto',Arial, Helvetica, sans-serif;
+}
+/* main blcok */
+.main-product-description-block{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* first block */
+.product-detail-wrapper{
+    width: 900px;
+    height: 500px;
+    margin:30px 30px 0px 30px;
+    background-color: white;
+    border: 1px solid #e8e4e4;
+    display: grid;
+    grid-template-columns: 500px 400px;
+}
+.product-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #e8e4e4;
+}
+.product-image > img{
+    width: 200px;
+}
+.product-description{
+    padding: 20px;
+}
+.product-description >h1{
+    margin: 0;
+    font-weight: 400;
+}
+
+.product-rating{
+    align-items: center;
+    padding: 0;
+    margin:10px 0px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e8e4e4;
+}
+
+.product-rating > img{
+    height: 20px;
+}
+.price1{
+    margin-top: 5px;
+    color: #999999;
+}
+.price2{
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 35px;
+}
+.product-rating > a{
+    text-decoration: none;
+    color: #3994d3;
+}
+.product-rating > a:hover{
+    text-decoration: underline;
+}
+.gotobasket{
+    padding: 10px 30px;
+    color:white;
+    text-decoration: none;
+    background-color: #f14635;
+    font-size: 14px;
+}
+.description{
+    margin-top: 20px;
+    border-top: 1px solid #e8e4e4;
+    padding-top: 20px;
+}
+/* second block */
+.product-rating-wrapper{
+    width: 900px;
+    margin: 30px;
+    /* height: 700px; */
+    background-color: white;
+    border: 1px solid #e8e4e4;
+}
+.product-rating-wrapper{
+    box-sizing: border-box;
+    padding: 20px;
+}
+.product-rating-wrapper > h1{
+    font-weight: 400;
+}
+.feedback{
+    padding:20px 0 ;
+    border-top: 1px solid #e8e4e4;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+.feed>p{
+    margin: 0;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+.create-feedback{
+    padding: 20px 0px;
+    border-top: 1px solid #e8e4e4;
+    border-top: 1px solid #e8e4e4;
+}
+.create-feedback .submit{
+    margin: 20px 0px;
+    padding: 5px 40px;
+    color: white;
+    background-color: #3994d3;
+    border: none;
+    border-radius: 3px;
+}
+.create-feedback .submit:hover{
+    cursor: pointer;
+    background-color: #2f7bb1;
+}

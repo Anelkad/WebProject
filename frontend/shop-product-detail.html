@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/Aru/shop.css">
+    <link rel="stylesheet" href="./style/Aru/shop-product-detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Products</title>
+</head>
+<body style="margin: 0;padding: 0; background-color: #fbfbfb;">
+    <div class="search-block">
+        <form action="/" method="post">
+            <a href="./shop.html">Магазин</a>
+            <div class="search-bar-wrapper">
+                <input class="search-bar__input" type="search" placeholder="Поиск товара" maxlength="256">
+                <button class="search-button" type="submit">
+                    <img src="./image/icons8-поиск-60.png" alt="">
+                </button>
+            </div>
+        </form>
+        
+    </div>
+    <div class="catalog-wrapper">
+        <a href="./shop-category.html">
+            СПОРТ, ТУРИЗМ
+        </a>
+        <a href="./shop-category.html">
+            КРАСОТА, ЗДОРОВЬЕ
+        </a>
+        <a href="./shop-category.html">
+            АВТОТОВАРЫ
+        </a>
+        <a href="./shop-category.html">
+            ДЕТСКИЕ ТОВАРЫ
+        </a>
+        <a href="./shop-category.html">
+            КОМПЬЮТЕРЫ
+        </a>
+    </div>
+
+    <div class="main-product-description-block">
+        <div class="product-detail-wrapper">
+            <div class="product-image">
+                <img src="https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h12/hbf/44244240498718/kazahstan-bdi-trasnformer-belyj-102006367-1.jpg" alt="">
+            </div>
+            <div class="product-description">
+                <h1>Название продукта</h1>
+                <div class="product-rating">
+                    <img src="./image/rating2.png" alt="">
+                    <a href="">(69 отзывов)</a>
+                </div>
+                <p class="price1">Цена</p>
+                <p class="price2">47794 т</p>
+                <a class="gotobasket" href="./shop-basket.html">Перейти в корзину</a>
+                <p class="description">
+                    тип: трансформер
+                    форма: квадратный
+                    материал: ЛДСП, ,металл
+                    длина, см: 300
+                    ширина, см: 100
+                    высота, см: 78
+                    цвет: белый
+                    страна: Казахстан
+                </p>
+            </div>
+        </div>
+        <div class="product-rating-wrapper">
+            <h1>Отзывы о продукте</h1>
+            <form action="POST" class="create-feedback">
+                <label for="">Оставьте отзыв:</label>
+                <input type="text"><br>
+                <label for="">Поставьте оценку:</label>
+                <select id="selectId">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select><br>
+                <input class="submit" type="submit">
+            </form>
+            <div class="feedback">
+                <div class="feed">
+                    <img src="./image/rating5.png" alt="">
+                    <p>Aruzhan</p>
+                </div>
+                <div class="back">
+                    <p>Я сильно устала, это занимает очень много времени</p>
+                </div>
+            </div>
+            <div class="feedback">
+                <div class="feed">
+                    <img src="./image/rating5.png" alt="">
+                    <p>Aruzhan</p>
+                </div>
+                <div class="back">
+                    <p>Я сильно устала, это занимает очень много времени</p>
+                </div>
+            </div>
+            <div class="feedback">
+                <div class="feed">
+                    <img src="./image/rating5.png" alt="">
+                    <p>Aruzhan</p>
+                </div>
+                <div class="back">
+                    <p>Я сильно устала, это занимает очень много времени</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
