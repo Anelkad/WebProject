@@ -43,7 +43,7 @@
 </head>
 <body>
     <div id="head">
-        Клиенту Kaspi
+        Карта другого банка
     </div>
     <div id="main">
         <div class="card">
@@ -52,33 +52,18 @@
             <span class="sum"><?php echo $my_user['card_account'];?> ₸</span>
         </div>
 
-        <div id="all-type">
-            <div class="type">Телефон</div>
-            <div class="type-r">Карта</div>
-            <div class="type">Kaspi QR</div>
-        </div>
-
-        <form action="confirm_transfer_kaspi.php" method="post">
+        <form action="confirm_transfer_other.php" method="post">
         <div class="card">
-            <input placeholder="Kaspi Gold получателя" name="cardnumber">
+            <input placeholder="Карта получателя" name="cardnumber">
         </div>
 
         <div id="amount">
             <input id="sum" placeholder="0 ₸" name="total">
         </div>
 
-        <div id="msg">
-            <input placeholder="Сообщение получателю">
-            <img src="./image/user.jpg" align="right">
-        </div>
+        <p align="center" class="gray">Комиссия 150 ₸</p>
 
-        <div class="rakhmet">Рахмет!</div>
-        <div class="rakhmet">За обед</div>
-        <div class="rakhmet">Возвращаю :)</div>
-
-        <p align="center" class="gray">Комиссия 0 ₸</p>
-
-       <button type="submit" id="button">Перевести</button>
+        <button type="submit" id="button">Перевести</button>
     </div>
 </body>
 </html>

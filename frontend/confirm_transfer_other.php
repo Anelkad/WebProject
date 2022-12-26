@@ -13,7 +13,8 @@
             }
             
             try { 
-                $sql = "SELECT users.first_name, 
+                $sql = "SELECT users.id,
+                users.first_name, 
                 users.last_name,
                 users.card_account
                 FROM users
@@ -26,6 +27,7 @@
             } 
             
             while ($row = mysqli_fetch_array($result)) {
+                $my_user['id'] = $row['id'];
                 $my_user['card_account'] = $row['card_account'];
                 $my_user['first_name'] = $row['first_name'];
                 $my_user['last_name'] = $row['last_name'];
@@ -63,7 +65,6 @@
                 $pattern = "/^\d+$/";
                 if (!preg_match($pattern, $cardnumber)) return False;
                 if (strlen($cardnumber)!=16) return False;
-                if ($cardnumber[0]!=4) return False;
                 $sum = 0;
                 for ($i = 0;$i < 16; $i++) {
                     if (($i % 2) == 0) {
@@ -79,32 +80,23 @@
 
     if ($notsuccess){
     $ans='<h1>Извините</h1>
-			<p>Заполните пожалуйста все данные.   
-            <a href="transfer_to_kaspi_card.php">Вернуться?</a></p>';
+			<p>Заполните пожалуйста все данные.  
+            <a href="transfer_to_other_card.php">Вернуться?</a></p>';
     }else
     if (!card($cardnumber)){
         $ans='<h1>Извините</h1>
                 <p>Ваша карта не действительна, введите заново.  
-                <a href="transfer_to_kaspi_card.php">Вернуться?</a></p>';
+                <a href="transfer_to_other_card.php">Вернуться?</a></p>';
     }else
-        if (empty($recipient_card)){
-            $ans='<h1>Извините</h1>
-            <p>Такого клиента Каспи не существует.  
-            <a href="transfer_to_kaspi_card.php">Вернуться?</a></p>';
-        }
-    else
         if ($my_user['card_account'] < $total){
         $ans='<h1>Извините</h1>
                 <p>У Вас недостаточно средств.  
-                <a href="transfer_to_kaspi_card.php">Вернуться?</a></p>';
+                <a href="transfer_to_other_card.php">Вернуться?</a></p>';
         }
         else{
         session_start();
        
-        $first_name = $recipient_card['first_name'];
-        $last_name = $recipient_card['last_name'];
-        $id = $recipient_card['id'];
-        $_SESSION['transfer_amount'] = $total;
+        $id = $my_user['id'];
 
         $ans = "<div class=\"card white\">
             <img src=\"./image/gold.png\" align=\"left\">
@@ -114,7 +106,7 @@
 
         <div class=\"card white\">
             <img src=\"./image/gold.png\" align=\"left\">
-            <span class=\"top-text\">$first_name $last_name</span>
+            <span class=\"top-text\">$cardnumber</span>
         </div>
         
         &nbsp;
@@ -125,16 +117,21 @@
         </div>
         <div class=\"card white gray-color\">
             <span class=\"top-text\">Комиссия</span>
-            <span class=\"sum\">0 ₸</span>
-        </div>
-        <div class=\"card white gray-color\">
+            <span class=\"sum\">150 ₸</span>
+        </div>";
+
+        $total+=150;
+
+        $ans.="<div class=\"card white gray-color\">
             <span class=\"top-text\">Сумма списания</span>
             <span class=\"sum\">$total ₸</span>
         </div>
 
         &nbsp;
 
-       <a href=\"success_transfer.php?recipient_id=$id\"><div id=\"button\">Подтвердить и перевести</div></a>";}
+       <a href=\"success_transfer.php?sender_id=$id\"><div id=\"button\">Подтвердить и перевести</div></a>";
+       $_SESSION['transfer_amount'] = $total;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -147,7 +144,7 @@
 </head>
 <body>
     <div id="head">
-        Клиенту Kaspi
+        Клиенту другого банка
     </div>
     <div id="main">
         <?php
