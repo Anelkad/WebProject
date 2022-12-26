@@ -1,0 +1,260 @@
+
+body{
+    background-color: rgb(239, 239, 239);
+    text-align:center;
+    font-family: Roboto, sans-serif;
+    height: 3000px;
+}
+
+h1{
+    font-size: 200%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+header{
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    height: 55px;
+    margin-top: -10px;
+}
+
+
+
+.logo{
+    width:150px;
+    justify-content: center;
+    margin: 16px 150px 16px 20%;
+    
+}
+
+header p{
+    font-size:13px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: lightgrey;
+    margin: 20px 20px;
+}
+
+header p:hover{
+    
+}
+
+.mainImg{
+    padding: 5% 20% 0 20%;
+    background-color: rgb(231, 231, 231);
+    margin-bottom: 6%;
+}
+
+.first{
+    float:left;
+    width: 60%;
+    margin-top: 5%;
+}
+
+.second{
+    margin-left: 7%;
+    width:25%;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 23%;
+
+}
+
+.products div{
+    margin: 10px;
+    width: 320px;
+    height: 150px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px 30px;
+    text-align: left;
+}
+
+.from{
+    color: grey;
+    font-size: 13px;
+
+}
+
+.imgInProducts{
+    float: right;
+    width: 75px;
+    margin-top: 50px;
+
+}
+
+.center{
+    margin: 0;
+    width: 220px;
+    font-size: 20px;
+    margin-bottom: 15px;
+
+}
+
+.linkProducts{
+    color: rgb(11, 160, 228);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.linkProducts:hover{
+    text-decoration: underline;
+}
+
+.blocks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.left{
+    margin-left: 10px;
+    float: right;
+    background-color: white;
+    width: 345px;
+    height: 300px;
+    border-radius: 15px;
+    text-align: left; 
+    padding: 25px;
+}
+
+
+
+.phone{
+    float: right;
+    width: 150px;
+
+}
+
+.right div{
+    background-color: white;
+    width: 320px;
+    height: 146px;
+    margin: 0 10px 20px 22px;
+    padding: 10px 30px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.imgInLeft{
+    width: 50px;
+}
+
+.divIcons{
+    margin-top: -4px;
+}
+
+.icons{
+    width: 40px;
+}
+
+.leftButton{
+    border: none;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.secondBlock{
+    justify-content: center;
+    background-color: white;
+    width: 780px;
+    border-radius: 15px;
+    padding: 10px;
+    height: 410px;
+}
+
+.secondBlock img{
+    width: 200px;
+    margin: 25px 20px 0 20px;
+    
+}
+
+
+
+.thirdBlock{
+    justify-content: center;
+    background-color: white;
+    width: 780px;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 25px 0;
+}
+
+.payment{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 70px 30px 80px;
+    font-size: 23px;
+}
+
+.partnerBlocks{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 260px;
+}
+
+.partnerBlocks div{
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    width: 330px;
+    height: 160px;
+    margin: 20px 10px;
+    text-align: left;
+    padding: 20px;
+}
+
+
+.partnerBlocks img{
+    float: right;
+    width: 55px;
+    margin: 10px;
+
+}
+
+
+
+
+.footerAll{
+    margin-top: 20%;
+    border-top: 1px solid lightgrey;
+    padding: 5%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.footerIn{
+    margin: 0 25px;
+    display: block;
+    width: 160px;
+    text-align: left;
+    line-height: 25px;
+}
+
+.footerIn a{
+
+    text-decoration: none;
+    font-size: 10px;
+    color: rgb(182, 182, 182);
+
+}
+
+.footerIn a:hover{
+    color: grey;
+}
+
+.footerIn p{
+    font-weight: bold;
+    font-size: 11px;
+    margin: 5px -1px;
+}
