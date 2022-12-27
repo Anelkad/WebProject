@@ -43,7 +43,8 @@
 </head>
 <body>
     <div id="head">
-        Клиенту Kaspi
+    <a href="transfers.html"><img src="./image/back-button.png"  id="back" align="left"></a>
+    Клиенту Kaspi
     </div>
     <div id="main">
         <div class="card">

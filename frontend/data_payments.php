@@ -42,7 +42,8 @@ while($row=mysqli_fetch_array($sql)){
 <body>
     <div class="header">
         <div class="logo">
-            <p class="logo-text"><?php echo $subcategories['title'];?></p>
+            <a href="categories_payments1.php"><img src="./image/back-button.png"  id="back" align="left"></a>
+            <span class="logo-text"><?php echo $subcategories['title'];?></span>
         </div>
     </div>
     <div class="main">

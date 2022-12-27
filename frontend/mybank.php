@@ -48,7 +48,7 @@
 </head>
 <body>
     <div id="head">
-        <img src="./image/back-button.png" id="back" align="left">
+        <a href="mainPage.html"><img src="./image/back-button.png" id="back" align="left"></a>
         <img src="./image/Logo.png" width="50">
         <span id="title">Мой Банк</span>
     </div>

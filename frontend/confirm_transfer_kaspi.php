@@ -148,6 +148,7 @@
 <body>
     <div id="head">
         Клиенту Kaspi
+        <a href="transfer_to_kaspi_card.php"><img src="./image/back-button.png"  id="back" align="left"></a>
     </div>
     <div id="main">
         <?php

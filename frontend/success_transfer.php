@@ -71,9 +71,9 @@
                 </div>
                 &nbsp;
         
-                <div class=\"card white gray-color\"> 
-                    <a href=\"operations.php\" class=\"top-text\">Показать историю</a>
-                </div>
+                <a href=\"operations.php\"><div class=\"card white\">
+                    <span  class=\"top-text\">Показать историю</span>
+                </div></a>
                 
                 &nbsp;
                 <a href=\"categories_payments1.php\"><div id=\"button\">Вернуться в платежи</div></a>";
@@ -89,12 +89,12 @@
                 </div>
                 &nbsp;
         
-                <div class=\"card white gray-color\">
-                    <a href=\"operations.php\" class=\"top-text\">Показать историю</a>
-                </div>
+                <a href=\"operations.php\"><div class=\"card white\">
+                    <span  class=\"top-text\">Показать историю</span>
+                </div></a>
                 
                 &nbsp;
-                <a href=\"transfer_to_other_card.php\"><div id=\"button\">Вернуться в переводы</div></a>";
+                <a href=\"transfers.html\"><div id=\"button\">Вернуться в переводы</div></a>";
             }else
             if(isset($_GET['recipient_id']) && $my_user_id!=$_GET['recipient_id']){
                 $recipient_id = $_GET['recipient_id'];
@@ -134,12 +134,12 @@
                 </div>
                 &nbsp;
         
-                <div class=\"card white gray-color\">
-                    <a href=\"operations.php\" class=\"top-text\">Показать историю</a>
-                </div>
+                <a href=\"operations.php\"><div class=\"card white\">
+                    <span  class=\"top-text\">Показать историю</span>
+                </div></a>
                 
                 &nbsp;
-                <a href=\"transfer_to_kaspi_card.php\"><div id=\"button\">Вернуться в переводы</div></a>";
+                <a href=\"transfers.html\"><div id=\"button\">Вернуться в переводы</div></a>";
             }
 
             else {

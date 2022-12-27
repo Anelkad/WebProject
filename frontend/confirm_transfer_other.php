@@ -146,6 +146,7 @@
 <body>
     <div id="head">
         Клиенту другого банка
+        <a href="transfer_to_other_card.php"><img src="./image/back-button.png"  id="back" align="left"></a>
     </div>
     <div id="main">
         <?php

@@ -57,6 +57,7 @@ while($row=mysqli_fetch_array($sql)){
 
 <body>
     <div id="head">
+        <a href="categories_payments1.php"><img src="./image/back-button.png"  id="back" align="left"></a>
         Каспи Платежи
     </div>
     <div id="main">
