@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2022 at 05:59 PM
+-- Generation Time: Dec 27, 2022 at 09:30 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -41,7 +41,7 @@ INSERT INTO `shop-catalog` (`id`, `name`, `imageURL`) VALUES
 (1, 'Спорт,туризм', 'catalog-sport,turism.png'),
 (2, 'Красота и здоровье', 'catalog-beauty,healthy.webp'),
 (3, 'Автотовары', 'catalog-autotovary.png'),
-(4, 'Детские товары', 'catalog-detckiye tovary.png'),
+(4, 'Детские товары', 'catalog-detckiye_tovary.png'),
 (5, 'Компьютеры', 'catalog-computers.png');
 
 --
