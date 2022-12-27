@@ -46,8 +46,7 @@
                 <a href="confirm_image.php">Вернуться?</a></p>';
             }
             else{
-                $new_image='"'.$new_image.'"';
-                mysqli_query($conn, "UPDATE users SET img = $new_image WHERE id='$my_user_id'");
+                mysqli_query($conn, "UPDATE users SET img = '$new_image' WHERE id='$my_user_id'");
                 $ans = "<div id=\"green\">
                 Ваш фото изменено.<br>
                 </div>
