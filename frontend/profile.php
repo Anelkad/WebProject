@@ -13,7 +13,43 @@
         <span id="title">Настройки</span>
     </div>
     <div id="main">
-        
+        <div id="profile-photo">
+            <img id="photo" src="./image/profilephoto.png">
+        </div>
+        <div id="setting">
+            <span>Добавить фото</span>
+        </div>
+        <br><br>
+        <div id="setting">
+            <span>Push-уведомления</span>
+        </div>
+        <br>
+        <div id="setting">
+            <span>Язык приложения</span><br>
+            <span class="text2">Русский</span>
+        </div>
+        <br><br>
+        <div id="setting">
+            <span>Изменить пароль</span>
+        </div>
+        <div id="setting">
+            <span>Изменить код быстрого доступа</span>
+        </div>
+        <div id="setting">
+            <span>Отключить код быстрого доступа</span>
+        </div>
+        <div id="setting">
+            <span>Блокирование скриншотов</span><br>
+            <span class="text2">Скриншоты с конфиденциальной информацией заблокированы</span>
+        </div>
+        <br>
+        <div id="setting">
+            <span>Изменить номер телефона</span>
+        </div>
+        <br><br>
+        <div id="logout">
+            <span>Выйти</span>
+        </div><br><br><br>
     </div>
     <div id="footer">
         <div class="categories">

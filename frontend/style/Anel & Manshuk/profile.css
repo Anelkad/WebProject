@@ -28,6 +28,54 @@ body{
     left: 7%;
 }
 
+#main{
+    left: 30%;
+    width: 40%;
+    position: absolute;
+    margin-top: 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#profile-photo{
+    background-color: #525252;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#photo{
+    border: 3px solid #a6a6a6;
+    border-radius: 100%;
+}
+
+#setting{
+    background-color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+#logout{
+    background-color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
+    color: red;
+    text-align: center;
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.text2{
+    font-size: 13px; 
+    color: rgb(188, 188, 188);
+}
+
 #footer{
     background-color: white;
     width: 40%;
@@ -39,6 +87,7 @@ body{
     position: fixed;
     bottom: 0;
     left: 0;
+    overflow: hidden;
 }
 
 .categories{
