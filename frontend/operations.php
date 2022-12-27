@@ -83,11 +83,13 @@
         <?php foreach($operations as $item):?>
             <div class="operation">
                 <img class="photos" src=<?php echo $item['img'];?>>
+                <div class="textss">
                 <div class="texts">
                     <span class="text1"><?php echo $item['receiver'];?></span>
                     <span class="text2"><?php echo $item['payment_type'];?></span>
                 </div>
                 <span class="operation-sum"><?php echo $item['sign'].$item['payment_amount'];?> ₸</span>
+                </div>
             </div>
         <?php endforeach;?>
 
