@@ -39,7 +39,7 @@
        $cardnumber = substr($cardnumber, -4);
        $my_user_id = $my_user['id'];
 
-       $sql=mysqli_query($conn, "SELECT payment_type, receiver, sign, payment_amount, img FROM operations WHERE payer_id='$my_user_id'");
+       $sql=mysqli_query($conn, "SELECT payment_type, receiver, sign, payment_amount, img, bonus_added FROM operations WHERE payer_id='$my_user_id'");
        $operations=array();
        $i=0;
        while($row=mysqli_fetch_array($sql)){
@@ -48,9 +48,11 @@
             $operations[$i]['receiver']=$row['receiver'];
             $operations[$i]['sign']=$row['sign'];
             $operations[$i]['img']=$row['img'];
+            $operations[$i]['bonus_added']=$row['bonus_added'];
             $i++;
        }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +90,13 @@
                     <span class="text1"><?php echo $item['receiver'];?></span>
                     <span class="text2"><?php echo $item['payment_type'];?></span>
                 </div>
-                <span class="operation-sum"><?php echo $item['sign'].$item['payment_amount'];?> ₸</span>
+                <span class="operation-sum"><?php echo $item['sign'].' '.$item['payment_amount'];?> ₸
+                <br> <?php
+                if ($item['bonus_added']>0){
+                    echo '<span class="bonus">';
+                    echo '+ '.$item['bonus_added'].' Б';
+                    echo '</span>';
+                    } ?></span>
                 </div>
             </div>
         <?php endforeach;?>

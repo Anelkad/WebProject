@@ -60,9 +60,11 @@
                  }
 
                 $total = $payment['total_cost'];
+                $bonus = $total/100;
                 $type = $payment['title'];
                 mysqli_query($conn, "UPDATE users SET card_account = card_account - $total WHERE id=$my_user_id");
-                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount, img) VALUES ('$my_user_id','Платежи','$type','-','$date','$total','\"./image/payment.png\"')");
+                mysqli_query($conn, "UPDATE users SET bonus_account = bonus_account + $bonus WHERE id=$my_user_id");
+                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount, img, bonus_added) VALUES ('$my_user_id','Платежи','$type','-','$date','$total','\"./image/payment.png\"','$bonus')");
                 $ans = "<div id=\"green\">
                 Ваш платеж совершен.<br>
                 <span id=\"big\">$total ₸</span>

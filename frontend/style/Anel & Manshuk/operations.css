@@ -126,5 +126,10 @@ body{
 }
 
 .operation-sum{
+    text-align: right;
+}
 
+.bonus{
+    font-size: 13px;
+    color: green;
 }
