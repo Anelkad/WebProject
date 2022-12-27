@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 26, 2022 at 05:59 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Хост: localhost
+-- Время создания: Дек 27 2022 г., 08:41
+-- Версия сервера: 10.4.21-MariaDB
+-- Версия PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `final`
+-- База данных: `final`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `shop-category`
+-- Структура таблицы `shop-category`
 --
 
 CREATE TABLE `shop-category` (
@@ -34,33 +34,45 @@ CREATE TABLE `shop-category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `shop-category`
+-- Дамп данных таблицы `shop-category`
 --
 
 INSERT INTO `shop-category` (`id`, `catalogId`, `name`) VALUES
 (1, 1, 'Велосипеды'),
 (2, 1, 'Самокаты'),
-(3, 1, 'Скейтборды и лонгборды');
+(3, 1, 'Скейтборды и лонгборды'),
+(4, 2, 'Патчи'),
+(5, 2, 'Кремы и сыворотки'),
+(6, 2, 'Маски для лица'),
+(7, 3, 'Автокомпрессоры'),
+(8, 3, 'Обогреватели'),
+(9, 3, 'Утеплители'),
+(10, 4, 'Конструкторы'),
+(11, 4, 'Развивающие игрушки'),
+(12, 4, 'Наборы игрушек'),
+(13, 5, 'Ноутбуки'),
+(14, 5, 'Планшеты'),
+(15, 5, 'Моноблоки');
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `shop-category`
+-- Индексы таблицы `shop-category`
 --
 ALTER TABLE `shop-category`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `shop-category`
+-- AUTO_INCREMENT для таблицы `shop-category`
 --
 ALTER TABLE `shop-category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
