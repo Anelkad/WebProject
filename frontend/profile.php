@@ -50,9 +50,9 @@
         <div id="profile-photo">
             <img id="photo" src=<?php echo $my_user['img']; ?>>
         </div>
-        <div id="setting">
+        <a href="confirm_image.php"><div id="setting">
             <span>Добавить фото</span>
-        </div>
+        </div></a>
         <br><br>
         <div id="setting">
             <span>Push-уведомления</span>
@@ -77,9 +77,9 @@
             <span class="text2">Скриншоты с конфиденциальной информацией заблокированы</span>
         </div>
         <br>
-        <div id="setting">
+        <a href="confirm_number.php"><div id="setting">
             <span>Изменить номер телефона</span>
-        </div>
+        </div></a>
         <br><br>
         <div id="logout">
             <span>Выйти</span>

@@ -117,3 +117,9 @@ button{
     font-size: 40px;
     font-weight: 500;
 }
+
+.number{
+    font-weight: 600;
+    font-size: 25px;
+    padding: 10px;
+}
