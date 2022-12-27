@@ -2,14 +2,19 @@
 include("../backend/shop-product-detail-process.php");
 // print($_GET['ctgId']);
 // var_dump($result);
+$userName="Aruzhan"; //!!!!!!!!!!!! нужно взять name текущего юзера и поставить
+$id=$resultProduct[0]['id'];
 $pName=$resultProduct[0]['name'];
 $image=$resultProduct[0]['imageURL'];
 $price=$resultProduct[0]['price'];
 $desc=$resultProduct[0]['description'];
-if(empty($resultFeedbackCnt[0])){
+if(empty($resultFeedbackCnt[0]['COUNT(*)'])){
     $cnt=0;
 }else{
-    $cnt=$resultFeedbackCnt[0];
+    $cnt=$resultFeedbackCnt[0]['COUNT(*)'];
+}
+if(!isset($resultFeedback) || empty($resultFeedback)){
+    $resultFeedback=[];
 }
 ?>
 <!DOCTYPE html>
@@ -35,7 +40,7 @@ if(empty($resultFeedbackCnt[0])){
     </header>
     <div class="search-block" style="padding-top: 45px;">
         <form action="/" method="post">
-            <a href="http://localhost/WebKaspiProject/frontend/shop.php">Магазин</a>
+            <a href="./shop.php">Магазин</a>
             <div class="search-bar-wrapper">
                 <input class="search-bar__input" type="search" placeholder="Поиск товара" maxlength="256">
                 <button class="search-button" type="submit">
@@ -50,7 +55,7 @@ if(empty($resultFeedbackCnt[0])){
         <?php
         foreach($resultCatalog as $key=>$value){
             $name=$value['name'];
-            echo "<a href='http://localhost/WebKaspiProject/frontend/shop-category.php'>";
+            echo "<a href='./shop-category.php'>";
             echo "$name";
             echo "</a>";
         }
@@ -78,11 +83,11 @@ if(empty($resultFeedbackCnt[0])){
         </div>
         <div class="product-rating-wrapper">
             <h1>Отзывы о продукте</h1>
-            <form action="POST" class="create-feedback">
+            <form action=<?php echo "./shop-product-detail.php?pId=$id&userName=$userName"?> method="POST" class="create-feedback">
                 <label for="">Оставьте отзыв:</label>
-                <input type="text"><br>
+                <input type="text" id="content" name="content"><br>
                 <label for="">Поставьте оценку:</label>
-                <select id="selectId">
+                <select id="selectId" name="selectId">
                     <option value=""></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -92,33 +97,35 @@ if(empty($resultFeedbackCnt[0])){
                 </select><br>
                 <input class="submit" type="submit">
             </form>
+            <?php
+            foreach($resultFeedback as $key=>$value){
+                if($value['rating']==5){
+                    $image="./image/rating5.png";
+                }elseif($value['rating']==4){
+                    $image="./image/rating4.png";
+                }elseif($value['rating']==3){
+                    $image="./image/rating3.png";
+                }elseif($value['rating']==2){
+                    $image="./image/rating2.png";
+                }else{
+                    $image="./image/rating1.png";
+                }
+                $name=$value['userName'];
+                $content=$value['content'];
+            
+            ?>
             <div class="feedback">
                 <div class="feed">
-                    <img src="./image/rating5.png" alt="">
-                    <p>Aruzhan</p>
+                    <img src=<?php echo "$image";?> alt="">
+                    <p> <?php echo $name; ?></p>
                 </div>
                 <div class="back">
-                    <p>Я сильно устала, это занимает очень много времени</p>
+                    <p> <?php echo $content; ?> </p>
                 </div>
             </div>
-            <div class="feedback">
-                <div class="feed">
-                    <img src="./image/rating5.png" alt="">
-                    <p>Aruzhan</p>
-                </div>
-                <div class="back">
-                    <p>Я сильно устала, это занимает очень много времени</p>
-                </div>
-            </div>
-            <div class="feedback">
-                <div class="feed">
-                    <img src="./image/rating5.png" alt="">
-                    <p>Aruzhan</p>
-                </div>
-                <div class="back">
-                    <p>Я сильно устала, это занимает очень много времени</p>
-                </div>
-            </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
     <footer>
