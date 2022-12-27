@@ -1,8 +1,9 @@
 <?php
+session_start();
 include("../backend/shop-product-detail-process.php");
 // print($_GET['ctgId']);
 // var_dump($result);
-$userName="Aruzhan"; //!!!!!!!!!!!! нужно взять name текущего юзера и поставить
+$userName=$_SESSION['userName']; 
 $id=$resultProduct[0]['id'];
 $pName=$resultProduct[0]['name'];
 $image=$resultProduct[0]['imageURL'];
@@ -75,7 +76,7 @@ if(!isset($resultFeedback) || empty($resultFeedback)){
                 </div>
                 <p class="price1">Цена</p>
                 <p class="price2"><?php echo"$price";?> т</p>
-                <a class="gotobasket" href="./shop-basket.html">Перейти в корзину</a>
+                <a class="gotobasket" href=<?php echo "./shop-basket.php?pId=$id&action=add"?>>Добавить в корзину</a>
                 <p class="description">
                     <?php echo"$desc";?>
                 </p>

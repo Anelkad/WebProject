@@ -21,15 +21,23 @@ body{
     margin-right: 30px;
 }
 /* main products */
+.image-block{
+    height: 200px;
+}
+.image-block >img{
+    height: 100px;
+
+}
 .products-wrapper{
     margin: 30px;
     background-color: white;
 }
 .product-detail{
+    height: 300px;
     padding: 30px;
     border-bottom: 1px solid #e8e4e4;
     display: grid;
-    grid-template-columns: 30% 1fr;
+    grid-template-columns: 20% 1fr;
 }
 .desc-name{
     font-size: 22px;

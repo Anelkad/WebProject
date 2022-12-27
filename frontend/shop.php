@@ -23,7 +23,7 @@ include("../backend/shop-process.php");
     </header>
     <div class="search-block" style="padding-top: 45px;">
         <form action="/" method="post">
-            <a href="http://localhost/WebKaspiProject/frontend/shop.php">Магазин</a>
+            <a href="./shop.php">Магазин</a>
             <div class="search-bar-wrapper">
                 <input class="search-bar__input" type="search" placeholder="Поиск товара" maxlength="256">
                 <button class="search-button" type="submit">
@@ -38,7 +38,7 @@ include("../backend/shop-process.php");
         <?php
         foreach($result as $key=>$value){
             $name=$value['name'];
-            echo "<a href='http://localhost/WebKaspiProject/frontend/shop-category.php'>";
+            echo "<a href='./shop-category.php'>";
             echo "$name";
             echo "</a>";
         }
@@ -55,7 +55,7 @@ include("../backend/shop-process.php");
         foreach($result as $key=>$value){
         ?>
         <div class="block-wrapper">
-            <a href="http://localhost/WebKaspiProject/frontend/shop-category.php">
+            <a href="./shop-category.php">
                 <div>
                     <?php
                     $name=$value['name'];

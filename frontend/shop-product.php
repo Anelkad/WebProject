@@ -1,8 +1,9 @@
 <?php
 include("../backend/shop-product-process.php");
-print($_GET['ctgId']);
+// print($_GET['ctgId']);
 // var_dump($result);
 ?>
+<!-- http://localhost/WebKaspiProject/frontend/shop.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +27,7 @@ print($_GET['ctgId']);
     </header>
     <div class="search-block" style="padding-top: 45px;">
         <form action="/" method="post">
-            <a href="http://localhost/WebKaspiProject/frontend/shop.php">Магазин</a>
+            <a href="./shop.php">Магазин</a>
             <div class="search-bar-wrapper">
                 <input class="search-bar__input" type="search" placeholder="Поиск товара" maxlength="256">
                 <button class="search-button" type="submit">
@@ -41,7 +42,7 @@ print($_GET['ctgId']);
         <?php
         foreach($resultCatalog as $key=>$value){
             $name=$value['name'];
-            echo "<a href='http://localhost/WebKaspiProject/frontend/shop-category.php'>";
+            echo "<a href='./shop-category.php'>";
             echo "$name";
             echo "</a>";
         }
@@ -77,10 +78,10 @@ print($_GET['ctgId']);
                     <img src=<?php echo "$img";?> alt="">
                 </div>
                 <div class="product-description">
-                    <a href=<?php echo"http://localhost/WebKaspiProject/frontend/shop-product-detail.php?pId=".$id?> class="product-name"><p><?php echo"$name";?></p></a>
+                    <a href=<?php echo"./shop-product-detail.php?pId=".$id?> class="product-name"><p><?php echo"$name";?></p></a>
                     <div class="product-rating">
                         <img src="./image/rating2.png" alt="">
-                        <a href=<?php echo"http://localhost/WebKaspiProject/frontend/shop-product-detail.php?pId=".$id?> >(69 отзывов)</a>
+                        <a href=<?php echo"./shop-product-detail.php?pId=".$id?> >(69 отзывов)</a>
                     </div>
                     <p class="price1">Цена</p>
                     <p class="price2"><?php echo"$price"?> т</p>

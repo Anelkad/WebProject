@@ -1,3 +1,13 @@
+<?php
+session_start();
+include("../backend/shop-basket-process.php");
+
+if((isset($_SESSION['cart']) && count($_SESSION['cart'])==0)||(!isset($_SESSION['cart']))){
+    $total_price=0;
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,65 +30,46 @@
         <p>Kaspi Гид</p>
     </header>
     <div class="header" style="padding-top: 45px;">
-        <a href="./shop.html"><img src="./image/goback.png" alt=""></a>
+        <a href="./shop.php"><img src="./image/goback.png" alt=""></a>
         <h1>Корзина</h1>
     </div>
 
     <div class="products-wrapper">
+        <?php 
+        if(isset($_SESSION['cart']) && count($_SESSION['cart'])>0){
+            foreach($_SESSION['cart'] as $key=>$value){
+                $id=$value['id'];
+                $image=$value['img_url'];
+                $name=$value["name"];
+                $price=$value["price"];
+                $desc=$value["description"];
+                $q=$value["quant"];
+        
+        ?>
         <div class="product-detail">
             <div class="image-block">
-                <img src="./image/catalog-autotovary.png" alt="">
+                <img src=<?php echo"$image";?> alt="">
             </div>
             <div class="desc-block">
-                <p class="desc-name">Name of product or description</p>
+                <p class="desc-name"><?php echo "$name";?></p>
                     
                 <p class="price1">Цена</p>
-                <p class="price2">47794 т</p>
+                <p class="price2"><?php echo "$price";?> т</p>
                 <div class="change-quantity">
-                    <a href="">-</a>
-                    <p>1</p>
-                    <a href="">+</a>
+                    <a href=<?php echo"./shop-basket.php?pId=$id&action=dec";?> >-</a>
+                    <p><?php echo $q;?></p>
+                    <a href=<?php echo"./shop-basket.php?pId=$id&action=inc";?> >+</a>
                 </div>
             </div>
-            
         </div>
-        <div class="product-detail">
-            <div class="image-block">
-                <img src="./image/catalog-autotovary.png" alt="">
-            </div>
-            <div class="desc-block">
-                <p class="desc-name">Name of product or description</p>
-                    
-                <p class="price1">Цена</p>
-                <p class="price2">47794 т</p>
-                <div class="change-quantity">
-                    <a href="">-</a>
-                    <p>1</p>
-                    <a href="">+</a>
-                </div>
-            </div>
-            
-        </div>
-        <div class="product-detail">
-            <div class="image-block">
-                <img src="./image/catalog-autotovary.png" alt="">
-            </div>
-            <div class="desc-block">
-                <p class="desc-name">Name of product or description</p>
-                    
-                <p class="price1">Цена</p>
-                <p class="price2">47794 т</p>
-                <div class="change-quantity">
-                    <a href="">-</a>
-                    <p>1</p>
-                    <a href="">+</a>
-                </div>
-            </div>
-            
-        </div>
+        <?php 
+            }
+        }
+        ?>  
+        
         <div class="submit-wrapper">
-            <form action="POST">
-                <input class="submit-button" type="submit" value="Оформить и оплатить 1564313т">
+            <form action="" method="POST">
+                <input class="submit-button" type="submit" value="Оформить и оплатить <?php echo $total_price?>т">
             </form>
         </div>
         
