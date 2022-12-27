@@ -81,7 +81,7 @@ include("../backend/shop-product-process.php");
                     <a href=<?php echo"./shop-product-detail.php?pId=".$id?> class="product-name"><p><?php echo"$name";?></p></a>
                     <div class="product-rating">
                         <img src="./image/rating2.png" alt="">
-                        <a href=<?php echo"./shop-product-detail.php?pId=".$id?> >(69 отзывов)</a>
+                        <a href=<?php echo"./shop-product-detail.php?pId=".$id?> >(1 отзывов)</a>
                     </div>
                     <p class="price1">Цена</p>
                     <p class="price2"><?php echo"$price"?> т</p>
