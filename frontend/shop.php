@@ -1,17 +1,19 @@
+<?php
+include("../backend/shop-process.php");
+// var_dump($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaspi Магазин</title>
     <link rel="stylesheet" href="./style/Aru/shop.css">
-    <link rel="stylesheet" href="./style/Aru/shop-basket.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="mainPage.css"> -->
-    <title>Корзина</title>
 </head>
-<body>
+<body style="margin:0;padding: 0;">
     <header>
         <img class="logo" src="https://kaspi.kz/img/Logo.svg" alt="">
         
@@ -19,69 +21,55 @@
         <p>Бизнесу</p>
         <p>Kaspi Гид</p>
     </header>
-    <div class="header" style="padding-top: 45px;">
-        <a href="./shop.html"><img src="./image/goback.png" alt=""></a>
-        <h1>Корзина</h1>
-    </div>
-
-    <div class="products-wrapper">
-        <div class="product-detail">
-            <div class="image-block">
-                <img src="./image/catalog-autotovary.png" alt="">
+    <div class="search-block" style="padding-top: 45px;">
+        <form action="/" method="post">
+            <a href="http://localhost/WebKaspiProject/frontend/shop.php">Магазин</a>
+            <div class="search-bar-wrapper">
+                <input class="search-bar__input" type="search" placeholder="Поиск товара" maxlength="256">
+                <button class="search-button" type="submit">
+                    <img src="./image/icons8-поиск-60.png" alt="">
+                </button>
             </div>
-            <div class="desc-block">
-                <p class="desc-name">Name of product or description</p>
-                    
-                <p class="price1">Цена</p>
-                <p class="price2">47794 т</p>
-                <div class="change-quantity">
-                    <a href="">-</a>
-                    <p>1</p>
-                    <a href="">+</a>
-                </div>
-            </div>
-            
-        </div>
-        <div class="product-detail">
-            <div class="image-block">
-                <img src="./image/catalog-autotovary.png" alt="">
-            </div>
-            <div class="desc-block">
-                <p class="desc-name">Name of product or description</p>
-                    
-                <p class="price1">Цена</p>
-                <p class="price2">47794 т</p>
-                <div class="change-quantity">
-                    <a href="">-</a>
-                    <p>1</p>
-                    <a href="">+</a>
-                </div>
-            </div>
-            
-        </div>
-        <div class="product-detail">
-            <div class="image-block">
-                <img src="./image/catalog-autotovary.png" alt="">
-            </div>
-            <div class="desc-block">
-                <p class="desc-name">Name of product or description</p>
-                    
-                <p class="price1">Цена</p>
-                <p class="price2">47794 т</p>
-                <div class="change-quantity">
-                    <a href="">-</a>
-                    <p>1</p>
-                    <a href="">+</a>
-                </div>
-            </div>
-            
-        </div>
-        <div class="submit-wrapper">
-            <form action="POST">
-                <input class="submit-button" type="submit" value="Оформить и оплатить 1564313т">
-            </form>
-        </div>
+        </form>
         
+    </div>
+    
+    <div class="catalog-wrapper">
+        <?php
+        foreach($result as $key=>$value){
+            $name=$value['name'];
+            echo "<a href='http://localhost/WebKaspiProject/frontend/shop-category.php'>";
+            echo "$name";
+            echo "</a>";
+        }
+        ?>
+        
+        
+    </div>
+    
+    <div class="advertisement-block">
+        <img src="./image/main_shop.png" alt="">
+    </div>
+    <div class="main-block-wrapper">
+        <?php 
+        foreach($result as $key=>$value){
+        ?>
+        <div class="block-wrapper">
+            <a href="http://localhost/WebKaspiProject/frontend/shop-category.php">
+                <div>
+                    <?php
+                    $name=$value['name'];
+                    echo "$name";
+                    ?>
+                </div>
+                <div>
+                    <img src=<?php echo"./image/". $value['imageURL']?> alt="">
+                </div>
+            </a>
+        </div>
+        <?php
+        };
+         ?>
     </div>
     <footer>
         <div class="footerAll">

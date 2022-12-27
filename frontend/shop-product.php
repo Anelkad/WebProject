@@ -1,3 +1,8 @@
+<?php
+include("../backend/shop-product-process.php");
+print($_GET['ctgId']);
+// var_dump($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,13 +10,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/Aru/shop.css">
-    <link rel="stylesheet" href="./style/Aru/shop-basket.css">
+    <link rel="stylesheet" href="./style/Aru/shop-product.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="mainPage.css"> -->
-    <title>Корзина</title>
+    <title>Products</title>
 </head>
-<body>
+<body style="margin: 0;padding: 0;">
     <header>
         <img class="logo" src="https://kaspi.kz/img/Logo.svg" alt="">
         
@@ -19,70 +24,73 @@
         <p>Бизнесу</p>
         <p>Kaspi Гид</p>
     </header>
-    <div class="header" style="padding-top: 45px;">
-        <a href="./shop.html"><img src="./image/goback.png" alt=""></a>
-        <h1>Корзина</h1>
-    </div>
-
-    <div class="products-wrapper">
-        <div class="product-detail">
-            <div class="image-block">
-                <img src="./image/catalog-autotovary.png" alt="">
+    <div class="search-block" style="padding-top: 45px;">
+        <form action="/" method="post">
+            <a href="http://localhost/WebKaspiProject/frontend/shop.php">Магазин</a>
+            <div class="search-bar-wrapper">
+                <input class="search-bar__input" type="search" placeholder="Поиск товара" maxlength="256">
+                <button class="search-button" type="submit">
+                    <img src="./image/icons8-поиск-60.png" alt="">
+                </button>
             </div>
-            <div class="desc-block">
-                <p class="desc-name">Name of product or description</p>
-                    
-                <p class="price1">Цена</p>
-                <p class="price2">47794 т</p>
-                <div class="change-quantity">
-                    <a href="">-</a>
-                    <p>1</p>
-                    <a href="">+</a>
-                </div>
-            </div>
-            
-        </div>
-        <div class="product-detail">
-            <div class="image-block">
-                <img src="./image/catalog-autotovary.png" alt="">
-            </div>
-            <div class="desc-block">
-                <p class="desc-name">Name of product or description</p>
-                    
-                <p class="price1">Цена</p>
-                <p class="price2">47794 т</p>
-                <div class="change-quantity">
-                    <a href="">-</a>
-                    <p>1</p>
-                    <a href="">+</a>
-                </div>
-            </div>
-            
-        </div>
-        <div class="product-detail">
-            <div class="image-block">
-                <img src="./image/catalog-autotovary.png" alt="">
-            </div>
-            <div class="desc-block">
-                <p class="desc-name">Name of product or description</p>
-                    
-                <p class="price1">Цена</p>
-                <p class="price2">47794 т</p>
-                <div class="change-quantity">
-                    <a href="">-</a>
-                    <p>1</p>
-                    <a href="">+</a>
-                </div>
-            </div>
-            
-        </div>
-        <div class="submit-wrapper">
-            <form action="POST">
-                <input class="submit-button" type="submit" value="Оформить и оплатить 1564313т">
-            </form>
-        </div>
+        </form>
         
     </div>
+    
+    <div class="catalog-wrapper">
+        <?php
+        foreach($resultCatalog as $key=>$value){
+            $name=$value['name'];
+            echo "<a href='http://localhost/WebKaspiProject/frontend/shop-category.php'>";
+            echo "$name";
+            echo "</a>";
+        }
+        ?>
+        
+        
+    </div>
+    <div class="main-products-wrapper">
+        <div class="sidebar-products-wrapper">
+            <p>Все категории</p>
+            <details>
+                <summary>Категория</summary>
+                <details>
+                    <?php
+                    echo "<summary style='padding-left: 20px;'>".$resultCatalogName[0]['name']."</summary>";
+                    echo "<ul style='padding-left: 60px;'>";
+                        echo "<li >".$resultCategoryName[0]['name']."</li>";
+                    echo "</ul>";
+                    ?>
+                </details>
+            </details>
+        </div>
+        <div class="products-wrapper">
+            <?php
+            foreach($resultProduct as $key=>$value){
+            $id=$value['id'];
+            $img=$value['imageURL'];
+            $name=$value['name'];
+            $price=$value['price'];
+            ?>
+            <div class="product-wrapper">
+                <div class="img-wrapper">
+                    <img src=<?php echo "$img";?> alt="">
+                </div>
+                <div class="product-description">
+                    <a href=<?php echo"http://localhost/WebKaspiProject/frontend/shop-product-detail.php?pId=".$id?> class="product-name"><p><?php echo"$name";?></p></a>
+                    <div class="product-rating">
+                        <img src="./image/rating2.png" alt="">
+                        <a href=<?php echo"http://localhost/WebKaspiProject/frontend/shop-product-detail.php?pId=".$id?> >(69 отзывов)</a>
+                    </div>
+                    <p class="price1">Цена</p>
+                    <p class="price2"><?php echo"$price"?> т</p>
+                </div>
+            </div>
+            <?php
+            }
+            ?>
+        </div>
+    </div>  
     <footer>
         <div class="footerAll">
             <div class="footerIn">
@@ -137,6 +145,6 @@
                 <img src="" alt="">
             </div>
         </div>
-    </footer>
+    </footer>  
 </body>
 </html>
