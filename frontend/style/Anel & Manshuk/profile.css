@@ -9,6 +9,7 @@ body{
     width: 40%;
     padding-top: 5px;
     position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
     display: flex;
@@ -36,6 +37,11 @@ body{
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }
 
 #profile-photo{

@@ -1,3 +1,37 @@
+<?php	
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "final";
+            
+            $my_user = array();
+
+            $conn = mysqli_connect($servername, $username, $password, $dbname);
+           
+            if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+            }
+            
+            try { 
+                $sql = "SELECT users.first_name, 
+                users.last_name,
+                users.card_account,
+                users.card_number,
+                users.img
+                FROM users
+                INNER JOIN my_user
+                ON my_user.user_id = users.id AND my_user.id = 1";
+               $result = mysqli_query($conn, $sql); 
+            } catch (mysqli_sql_exception $e) { 
+               var_dump($e);
+               exit; 
+            } 
+            
+            while ($row = mysqli_fetch_array($result)) {
+                $my_user['img'] = $row['img'];
+             }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +48,7 @@
     </div>
     <div id="main">
         <div id="profile-photo">
-            <img id="photo" src="./image/profilephoto.png">
+            <img id="photo" src=<?php echo $my_user['img']; ?>>
         </div>
         <div id="setting">
             <span>Добавить фото</span>
@@ -29,9 +63,9 @@
             <span class="text2">Русский</span>
         </div>
         <br><br>
-        <div id="setting">
+        <a href="confirm_password.php"><div id="setting">
             <span>Изменить пароль</span>
-        </div>
+        </div></a>
         <div id="setting">
             <span>Изменить код быстрого доступа</span>
         </div>

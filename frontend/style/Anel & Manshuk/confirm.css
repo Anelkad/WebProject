@@ -58,6 +58,14 @@ td{
     border-radius: 10px;
 }
 
+.card input{
+    width: 90%;
+    border: none;
+    font-size: 20px;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+
 .gray-color{
     color:rgb(99, 99, 99);
 }
@@ -83,6 +91,17 @@ td{
     color: white;
     text-align: center;
     padding: 15px;
+    border-radius: 10px;
+}
+
+button{
+    background-color: rgb(60, 133, 207);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 23px;
+    width: 100%;
+    border: none;
     border-radius: 10px;
 }
 
