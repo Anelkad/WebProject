@@ -43,7 +43,7 @@
 </head>
 <body>
     <div id="head">
-        <img src="./image/left.png" id="back" align="left">
+        <a href="mainPage.html"><img src="./image/left.png" id="back" align="left"></a>
         <span id="title">Настройки</span>
     </div>
     <div id="main">
