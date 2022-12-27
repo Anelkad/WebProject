@@ -44,7 +44,7 @@
             }
             else
             {
-                $bonus = $total/100;
+                $bonus = $total/10;
                 $type = 'Покупка в магазине';
                 mysqli_query($conn, "UPDATE users SET card_account = card_account - $total WHERE id=$my_user_id");
                 mysqli_query($conn, "UPDATE users SET bonus_account = bonus_account + $bonus WHERE id=$my_user_id");
