@@ -68,7 +68,7 @@ if((isset($_SESSION['cart']) && count($_SESSION['cart'])==0)||(!isset($_SESSION[
         ?>  
         
         <div class="submit-wrapper">
-            <form action="confirm_shop.php?totalPrice=<?php echo $total_price?>" method="POST">
+            <form action="confirm_shop.php?totalPrice=<?php echo $total_price;?>" method="POST">
                 <input class="submit-button" type="submit" value="Оформить и оплатить <?php echo $total_price?> т">
             </form>
         </div>
