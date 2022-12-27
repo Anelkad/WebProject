@@ -62,15 +62,15 @@
                 $total = $payment['total_cost'];
                 $type = $payment['title'];
                 mysqli_query($conn, "UPDATE users SET card_account = card_account - $total WHERE id=$my_user_id");
-                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount) VALUES ('$my_user_id','Платежи','$type','-','$date','$total')");
+                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount, img) VALUES ('$my_user_id','Платежи','$type','-','$date','$total','\"./image/payment.png\"')");
                 $ans = "<div id=\"green\">
                 Ваш платеж совершен.<br>
                 <span id=\"big\">$total ₸</span>
                 </div>
                 &nbsp;
         
-                <div class=\"card white gray-color\">
-                    <span class=\"top-text\">Показать квитанцию</span>
+                <div class=\"card white gray-color\"> 
+                    <a href=\"operations.php\" class=\"top-text\">Показать историю</a>
                 </div>
                 
                 &nbsp;
@@ -78,9 +78,8 @@
             }else
             if(isset($_GET['sender_id'])){
                 $sender_id = $_GET['sender_id'];
-                $cardnumber = $_SESSION['transfer_card'];
                 mysqli_query($conn, "UPDATE users SET card_account = card_account - $total WHERE id=$sender_id");
-                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount) VALUES ('$my_user_id','Перевод на другую карту','$cardnumber','-','$date','$total')");
+                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount, img) VALUES ('$my_user_id','Перевод','на карту другого банка','-','$date','$total','\"./image/user.png\"')");
                 
                 $ans = "<div id=\"green\">
                 Ваш перевод совершен.<br>
@@ -89,7 +88,7 @@
                 &nbsp;
         
                 <div class=\"card white gray-color\">
-                    <span class=\"top-text\">Показать квитанцию</span>
+                    <a href=\"operations.php\" class=\"top-text\">Показать историю</a>
                 </div>
                 
                 &nbsp;
@@ -123,8 +122,8 @@
                 mysqli_query($conn, "UPDATE users SET card_account = card_account + $total WHERE id=$recipient_id");
                 mysqli_query($conn, "UPDATE users SET card_account = card_account - $total WHERE id=$my_user_id");
 
-                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount) VALUES ('$my_user_id','Переводы','$recipient_fullname','-','$date','$total')");
-                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount) VALUES ('$recipient_id','Пополнения','$sender_fullname','+','$date','$total')");
+                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount, img) VALUES ('$my_user_id','Переводы','$recipient_fullname','-','$date','$total','\"./image/user.png\"')");
+                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount, img) VALUES ('$recipient_id','Пополнения','$sender_fullname','+','$date','$total','\"./image/coins.png\"')");
                 
 
                 $ans = "<div id=\"green\">
@@ -134,7 +133,7 @@
                 &nbsp;
         
                 <div class=\"card white gray-color\">
-                    <span class=\"top-text\">Показать квитанцию</span>
+                    <a href=\"operations.php\" class=\"top-text\">Показать историю</a>
                 </div>
                 
                 &nbsp;

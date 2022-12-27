@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Дек 26 2022 г., 17:58
+-- Время создания: Дек 27 2022 г., 05:47
 -- Версия сервера: 10.4.21-MariaDB
 -- Версия PHP: 8.1.6
 
@@ -35,8 +35,13 @@ CREATE TABLE `operations` (
   `sign` varchar(5) NOT NULL,
   `date` varchar(100) NOT NULL,
   `bonus_added` int(11) NOT NULL DEFAULT 0,
-  `payment_amount` int(11) NOT NULL
+  `payment_amount` int(11) NOT NULL,
+  `img` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `operations`
+--
 
 --
 -- Индексы сохранённых таблиц
