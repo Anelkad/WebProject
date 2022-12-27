@@ -38,46 +38,6 @@
             $my_user_id = $my_user['id'];
             $date = date('d.m.Y H:i:s');
 
-            if(isset($_GET['payment_id'])){
-                $payment_id = $_GET['payment_id'];
-                $payment = array();
-                try { 
-                    $sql = "SELECT id,
-                    title, 
-                    total_cost
-                    FROM subcategories
-                    WHERE id = '$payment_id'";
-                   $result = mysqli_query($conn, $sql); 
-                } catch (mysqli_sql_exception $e) { 
-                   var_dump($e);
-                   exit; 
-                } 
-                
-                while ($row = mysqli_fetch_array($result)) {
-                    $payment['id'] = $row['id'];
-                    $payment['title'] = $row['title'];
-                    $payment['total_cost'] = $row['total_cost'];
-                 }
-
-                $total = $payment['total_cost'];
-                $bonus = $total/100;
-                $type = $payment['title'];
-                mysqli_query($conn, "UPDATE users SET card_account = card_account - $total WHERE id=$my_user_id");
-                mysqli_query($conn, "UPDATE users SET bonus_account = bonus_account + $bonus WHERE id=$my_user_id");
-                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount, img, bonus_added) VALUES ('$my_user_id','Платежи','$type','-','$date','$total','\"./image/payment.png\"','$bonus')");
-                $ans = "<div id=\"green\">
-                Ваш платеж совершен.<br>
-                <span id=\"big\">$total ₸</span>
-                </div>
-                &nbsp;
-        
-                <a href=\"operations.php\"><div class=\"card white\">
-                    <span  class=\"top-text\">Показать историю</span>
-                </div></a>
-                
-                &nbsp;
-                <a href=\"categories_payments1.php\"><div id=\"button\">Вернуться в платежи</div></a>";
-            }else
             if(isset($_GET['sender_id'])){
                 $sender_id = $_GET['sender_id'];
                 mysqli_query($conn, "UPDATE users SET card_account = card_account - $total WHERE id=$sender_id");

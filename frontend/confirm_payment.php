@@ -95,7 +95,7 @@ while($row=mysqli_fetch_array($sql)){
         <hr>
         <p align="center" class="gray">Комиссия 0 ₸</p>
 
-        <a href="success_transfer.php?payment_id=<?php echo $payment_id;?>"><div id="button">Подтвердить и оплатить <?php echo $subcategories['total_cost']?> ₸</div></a>
+        <a href="success_payment.php?payment_id=<?php echo $payment_id;?>"><div id="button">Подтвердить и оплатить <?php echo $subcategories['total_cost']?> ₸</div></a>
     </div>
 </body>
 
