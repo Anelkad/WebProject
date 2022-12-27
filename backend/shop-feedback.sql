@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2022 at 05:59 PM
+-- Generation Time: Dec 27, 2022 at 08:51 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -40,7 +40,12 @@ CREATE TABLE `shop-feedback` (
 --
 
 INSERT INTO `shop-feedback` (`id`, `productId`, `userName`, `content`, `rating`) VALUES
-(1, 1, 'Аружан', 'Классный скейтборд! Ребенок доволен!!!', 5);
+(1, 1, 'Аружан', 'Классный скейтборд! Ребенок доволен!!!', 5),
+(2, 8, 'Анна', 'Очень классный велосипед! Брали на возраст 6 лет. Подойдёт на рост 115+. Красивый и удобный.', 5),
+(3, 6, 'Жанар', 'Привезли в собранном виде и колеса накачены. В комплекте почти все есть, сын доволен. Доставили быстрее чем ожидали.', 5),
+(4, 7, 'Арман', 'Велосипед жақсы, тек құралдарын түгел салмайды.', 4),
+(5, 5, 'Михаил', 'Отличный самокат на 120мм колёсах, алюминий под лаком произведение искусства, грипсы очень удобные, в комплекте пеги и осями.', 5),
+(6, 4, 'Дарья', 'Мы купили этот самокат по рекомендации друзей и теперь сами можем рекомендовать другим. Отличный выбор! Мягкое катание, амортизаторы, ручной тормоз, в целом довольны. Катаются и дети и взрослые.', 5);
 
 --
 -- Indexes for dumped tables
@@ -60,7 +65,7 @@ ALTER TABLE `shop-feedback`
 -- AUTO_INCREMENT for table `shop-feedback`
 --
 ALTER TABLE `shop-feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
