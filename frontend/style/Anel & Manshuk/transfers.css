@@ -1,0 +1,146 @@
+body{
+    background-color: rgb(225, 225, 225);
+    font-family:'Roboto',Arial, Helvetica, sans-serif;
+}
+
+#head{
+    background-color: white;
+    margin-left: 30%;
+    width: 40%;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    left: 0;
+    top: 0;
+    position: fixed;
+}
+
+#back{
+    margin-left: -32%;
+    margin-top: 2%;
+    cursor: pointer;
+}
+
+#head img{
+    position: relative;
+    left: 35%;
+}
+
+#title{
+    position: relative;
+    font-size: 25px;
+    left: 35%;
+    top: -15px;
+}
+
+#second-header{
+    background-color: white;
+}
+
+#box{
+    padding-left: 2%;
+    width: 96%;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 1%;
+}
+
+#nav, #aside{
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#nav{
+    color: white;
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 5px 0 0 5px;
+}
+
+#aside{
+    color: red;
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 0 5px 5px 0;
+}
+
+#main{
+    left: 30%;
+    width: 40%;
+    position: absolute;
+    margin-top: 100px;
+}
+
+.type{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 15px;
+    border-bottom: 1px solid rgb(225, 225, 225);
+    padding-right: 15px;
+}
+
+.photos{
+    width: 24px;
+    height: 24px;
+}
+
+.texts{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+
+.text1{
+    font-size: 17px;
+}
+
+.text2{
+    font-size: 12px;
+    color: rgb(188, 188, 188);
+}
+
+.just{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.photo2{
+    width: 16px;
+    height:16px;
+}
+
+#footer{
+    background-color: white;
+    width: 40%;
+    margin-top: 40%;
+    margin-left: 30%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.categories{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    padding-left: 11%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.categories span{
+    color: #bebebe;
+    font-size: 14px;
+}
