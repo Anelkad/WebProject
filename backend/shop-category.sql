@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Хост: localhost
--- Время создания: Дек 27 2022 г., 08:41
--- Версия сервера: 10.4.21-MariaDB
--- Версия PHP: 8.1.6
+-- Host: 127.0.0.1
+-- Generation Time: Dec 27, 2022 at 09:12 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `final`
+-- Database: `final`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `shop-category`
+-- Table structure for table `shop-category`
 --
 
 CREATE TABLE `shop-category` (
@@ -34,7 +34,7 @@ CREATE TABLE `shop-category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `shop-category`
+-- Dumping data for table `shop-category`
 --
 
 INSERT INTO `shop-category` (`id`, `catalogId`, `name`) VALUES
@@ -55,21 +55,21 @@ INSERT INTO `shop-category` (`id`, `catalogId`, `name`) VALUES
 (15, 5, 'Моноблоки');
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `shop-category`
+-- Indexes for table `shop-category`
 --
 ALTER TABLE `shop-category`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `shop-category`
+-- AUTO_INCREMENT for table `shop-category`
 --
 ALTER TABLE `shop-category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
