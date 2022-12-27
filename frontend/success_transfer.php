@@ -79,7 +79,7 @@
             if(isset($_GET['sender_id'])){
                 $sender_id = $_GET['sender_id'];
                 mysqli_query($conn, "UPDATE users SET card_account = card_account - $total WHERE id=$sender_id");
-                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount, img) VALUES ('$my_user_id','Перевод','на карту другого банка','-','$date','$total','\"./image/user.png\"')");
+                mysqli_query($conn, "INSERT INTO operations (payer_id, payment_type, receiver, sign, date, payment_amount, img) VALUES ('$my_user_id','Перевод','На карту другого банка','-','$date','$total','\"./image/user.png\"')");
                 
                 $ans = "<div id=\"green\">
                 Ваш перевод совершен.<br>
