@@ -45,7 +45,7 @@
             $number_exist = False;
 
             if (!empty($phone_number)){
-            $sql=mysqli_query($conn, "SELECT id FROM users WHERE phone_number='$phone_number'");
+            $sql=mysqli_query($conn, "SELECT id FROM users WHERE phone_number='$new_number'");
             if ($sql){
                 if(mysqli_num_rows($sql)>0){
                     $number_exist = True;
