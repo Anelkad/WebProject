@@ -42,6 +42,17 @@
             $pattern="/8[0-9]{3}[0-9]{4}[0-9]{3}/";
             $wrongnumber = !preg_match($pattern, $new_number) || strlen($new_number)!=11;
 
+            $number_exist = False;
+
+            if (!empty($phone_number)){
+            $sql=mysqli_query($conn, "SELECT id FROM users WHERE phone_number='$phone_number'");
+            if ($sql){
+                if(mysqli_num_rows($sql)>0){
+                    $number_exist = True;
+                }
+                }
+            }
+
             if ($notsuccess){
                 $ans = '<h1>Извините</h1>
                 <p>Вы не заполнили все данные.  
@@ -51,6 +62,12 @@
             if ($wrongnumber){
                 $ans = '<h1>Извините</h1>
                 <p>Ваш телефон неверный.  
+                <a href="confirm_number.php">Вернуться?</a></p>';
+            }
+            else
+            if ($number_exist){
+                $ans = '<h1>Извините</h1>
+                <p>Ваш номер телефона уже используется.  
                 <a href="confirm_number.php">Вернуться?</a></p>';
             }
             else{
