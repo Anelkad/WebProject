@@ -59,6 +59,54 @@ header p:hover{
     width:25%;
 }
 
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 13%;
+}
+
+.services div{
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 13px;
+    text-align: left;
+    padding: 10px 20px 0 40px;
+}
+
+.service{
+    width: 200px;
+    margin-bottom: 10px;
+    opacity: 1;
+}
+
+.services nav:hover button{
+    opacity: 1;
+}
+
+.services nav:hover .service{
+    opacity: 0;
+}
+
+
+.mainS{
+    font-size: 23px;
+
+}
+
+.services button{
+    position: absolute;
+    margin: 4% -11.5%;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(83, 136, 227);
+    color: white;
+    border-color: rgb(83, 136, 227);
+    opacity: 0;
+}
+
 .products{
     display: flex;
     flex-wrap: wrap;
@@ -258,3 +306,6 @@ header p:hover{
     font-size: 11px;
     margin: 5px -1px;
 }
+
+
+

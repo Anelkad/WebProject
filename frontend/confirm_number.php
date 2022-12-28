@@ -59,7 +59,7 @@
         <div class="card white">
             <input placeholder="Пример: 81234567890" name="new_number">
         </div>
-        <button type="submit">Продолжить</button>
+        <button class="continue" type="submit">Продолжить</button>
     </div>
 </body>
 

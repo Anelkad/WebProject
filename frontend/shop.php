@@ -10,9 +10,10 @@ include("../backend/shop-process.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaspi Магазин</title>
     <link rel="stylesheet" href="./style/Aru/shop.css">
+    <link rel="stylesheet" href="./style/Aru/shop-product.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
+ </head>
 <body style="margin:0;padding: 0;">
     <header>
         <img class="logo" src="https://kaspi.kz/img/Logo.svg" alt="">
@@ -22,11 +23,11 @@ include("../backend/shop-process.php");
         <p>Kaspi Гид</p>
     </header>
     <div class="search-block" style="padding-top: 45px;">
-        <form action="/" method="post">
+        <form action="search.php" method="post">
             <a href="./shop.php">Магазин</a>
             <div class="search-bar-wrapper">
-                <input class="search-bar__input" type="search" placeholder="Поиск товара" maxlength="256">
-                <button class="search-button" type="submit">
+                <input class="search-bar__input" name="search" type="search" placeholder="Поиск товара" maxlength="256">
+                <button class="search-button" onClick="moveToSearch()" type="submit">
                     <img src="./image/icons8-поиск-60.png" alt="">
                 </button>
             </div>
@@ -50,6 +51,7 @@ include("../backend/shop-process.php");
     <div class="advertisement-block">
         <img src="./image/main_shop.png" alt="">
     </div>
+
     <div class="main-block-wrapper">
         <?php 
         foreach($result as $key=>$value){
@@ -71,6 +73,8 @@ include("../backend/shop-process.php");
         };
          ?>
     </div>
+
+
     <footer>
         <div class="footerAll">
             <div class="footerIn">
@@ -113,18 +117,11 @@ include("../backend/shop-process.php");
             </div>
         </div>
 
-        <div class="additional">
-            <div class="socialImg">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-            </div>
-        </div>
     </footer>
+    <script>
+        function moveToStore() {
+            window.location.href = "search.php";
+        }
+    </script>    
 </body>
 </html>

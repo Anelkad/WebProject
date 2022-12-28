@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mainPage.css">
+    <link rel="stylesheet" href="./style/Anel & Manshuk/confirm.css">
     <title>Document</title>
 </head>
 <body>
@@ -15,6 +16,7 @@
         <p>Клиентам</p>
         <p>Бизнесу</p>
         <p>Kaspi Гид</p>
+        <a href="profile.php"><p>Профиль</p></a>
     </header>
     
 
@@ -25,7 +27,40 @@
 
     <h1>Сервисы Kaspi.kz</h1>
 
-
+    <div class="services">
+        <div>
+            <p>Магазин</p>
+            <p class="mainS">Покупки в рассрочку с бесплатной доставкой</p>
+            <nav>
+                <img class="service" style="margin-left: -10px; margin-top: -20px;" src="https://kaspi.kz/img/service-1.svg" alt="">
+                <button onClick="moveToStore()" style="margin-top: 35px;">Купить</button>
+            </nav>
+        </div>
+        <div>
+            <p>Платежи</p>
+            <p class="mainS">Без комиссий, более 10 000 услуг</p>
+            <nav>
+                <img class="service" style="margin-left: -10px;" src="https://kaspi.kz/img/payments.svg" alt="">
+                <button onClick="moveToPayments()">Оплатить услуги</button>
+            </nav>
+        </div>
+        <div>
+            <p>Мой банк</p>
+            <p class="mainS">Kaspi Red, Депозиты и кредиты онлайн</p>
+            <nav>
+                <img class="service" style="margin-left: -10px;" src="https://kaspi.kz/img/mybank.svg" alt="">
+                <button onClick="moveToMyBank()">Перейти в Мой Банк</button>
+            </nav>
+        </div>
+        <div>
+            <p>Переводы</p>
+            <p class="mainS">Без комиссий на Kaspi Gold</p>
+            <nav style="margin-top: 20%;">
+                <img class="service" style="margin-left: -10px;" src="https://kaspi.kz/img/transfers.svg" alt="">
+                <button onClick="moveToTransfers()">Совершить Перевод</button>
+            </nav>
+        </div>
+    </div>
 
 
 
@@ -37,7 +72,7 @@
             <img class="imgInProducts" src="https://kaspi.kz/img/gold.svg" alt="">
             <p class="from">Kaspi Gold</p>
             <p class="center">Переводы, платежи, снятия без комиссий</p>
-            <a href="" class="linkProducts">Открыть Kaspi Gold онлайн</a>
+            <a href="register.php" class="linkProducts">Открыть Kaspi Gold онлайн</a>
 
         </div>
         <div>
@@ -51,7 +86,7 @@
             <img class="imgInProducts" src="https://kaspi.kz/img/gold.svg" alt="">  
             <p class="from">Kaspi Gold для ребенка</p>
             <p class="center">Деньги на карманные расходы и контроль трат</p>
-            <a href="" class="linkProducts">Открыть Kaspi Gold для ребенка</a>
+            <a href="register.php" class="linkProducts">Открыть Kaspi Gold для ребенка</a>
         </div>
         <div>
             <img class="imgInProducts" src="https://kaspi.kz/img/kredit.svg" alt="">         
@@ -76,7 +111,7 @@
             <img class="imgInProducts" src="https://kaspi.kz/img/KN.svg" alt="">                
             <p class="from">Кредит Наличными</p>
             <p class="center">Одобрение онлайн за 1 минуту. Снятие денег в банкомате</p>
-            <a href="" class="linkProducts">Получить Кредит Наличными</a>
+            <a href="data_payments.php" class="linkProducts">Получить Кредит Наличными</a>
         </div>
     </div>
 
@@ -148,7 +183,19 @@
 
         
     </div>
-
+    
+    <h2 style="margin: 150px 0 50px 0; font-size: 30px;">Войдите, чтобы перейти в приложение Kaspi.kz</h2>
+    <div id="main">
+        <form action="success_login.php" method="post">
+        <div class="card white">
+            <input placeholder="Номер телефона например 81234567890" name="phone_number">
+        </div>
+        <div class="card white">
+            <input placeholder="Пароль" name="password">
+        </div>
+        <button class="continue" type="submit">Продолжить</button>
+        <a href="register.php" style="font-size: 15px; margin: 20px 0;">Если нет аккаунта, можете зарегистрироваться перейдя по ссылке</a>
+    </div>
     <footer>
         <div class="footerAll">
             <div class="footerIn">
@@ -163,7 +210,7 @@
             </div>
             <div class="footerIn">
                 <p>Сервисы Kaspi.kz</p>
-                <a href="">Магазин</a><br>
+                <a href="./shop.php">Магазин</a><br>
                 <a href="">Travel</a><br>
                 <a href="">Платежи</a><br>
                 <a href="">Мой банк</a><br>
@@ -190,22 +237,25 @@
                 
             </div>
         </div>
-
-        <div class="additional">
-            <div class="socialImg">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-            </div>
-        </div>
     </footer>
     
+    <script>
+        function moveToTransfers() {
+            window.location.href = "transfers.php";
+        }
 
 
+        function moveToMyBank() {
+            window.location.href = "mybank.php";
+        }
+
+        function moveToPayments() {
+            window.location.href = "categories_payments1.php";
+        }
+
+        function moveToStore() {
+            window.location.href = "shop.php";
+        }
+    </script>
 </body>
 </html>

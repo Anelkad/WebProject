@@ -24,11 +24,11 @@ include("../backend/shop-category-process.php");
         <p>Kaspi Гид</p>
     </header>
     <div class="search-block" style="padding-top: 45px;">
-        <form action="/" method="post">
+        <form action="search.php" method="post">
             <a href="./shop.php">Магазин</a>
             <div class="search-bar-wrapper">
-                <input class="search-bar__input" type="search" placeholder="Поиск товара" maxlength="256">
-                <button class="search-button" type="submit">
+                <input class="search-bar__input" name="search" type="search" placeholder="Поиск товара" maxlength="256">
+                <button class="search-button" onClick="moveToSearch()" type="submit">
                     <img src="./image/icons8-поиск-60.png" alt="">
                 </button>
             </div>

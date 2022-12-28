@@ -80,10 +80,10 @@
         </div>
     </div>
     <div id="footer">
-        <div class="categories">
+        <a href="mainPage.php" class="categories">
             <img src="./image/mainpage.png" width="32px">
             <span>Главная</span>
-        </div>
+        </a>
         <div class="categories">
             <img src="./image/qr.png" width="32px">
             <span>Kaspi QR</span>

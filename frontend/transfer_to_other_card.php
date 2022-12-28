@@ -43,7 +43,7 @@
 </head>
 <body>
     <div id="head">
-    <a href="transfers.html"><img src="./image/back-button.png"  id="back" align="left"></a>
+    <a href="transfers.php"><img src="./image/back-button.png"  id="back" align="left"></a>
         Карта другого банка
     </div>
     <div id="main">

@@ -43,7 +43,7 @@
 </head>
 <body>
     <div id="head">
-        <a href="mainPage.html"><img src="./image/left.png" id="back" align="left"></a>
+        <a href="mainPage.php"><img src="./image/left.png" id="back" align="left"></a>
         <span id="title">Настройки</span>
     </div>
     <div id="main">
@@ -81,9 +81,9 @@
             <span>Изменить номер телефона</span>
         </div></a>
         <br><br>
-        <div id="logout">
-            <span>Выйти</span>
-        </div><br><br><br>
+        <a href="mainPage.php" id="logout">
+            <span>Вернуться на главную</span>
+        </a><br><br><br>
     </div>
     <div id="footer">
         <div class="categories">

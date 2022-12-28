@@ -59,7 +59,7 @@
         <div class="card white">
             <input placeholder="Введите url ссылку" name="new_image">
         </div>
-        <button type="submit">Продолжить</button>
+        <button class="continue" type="submit">Продолжить</button>
     </div>
 </body>
 

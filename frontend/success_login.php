@@ -75,11 +75,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/Anel & Manshuk/confirm.css">
     <title>Регистрация</title>
+    <style>
+        
+    </style>
 </head>
 <body>
-    <div id="head">
-        Регистрация
-    </div>
     <div id="main">
         <?php echo $ans;?>
     </div>

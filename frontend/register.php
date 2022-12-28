@@ -10,7 +10,7 @@
 
 <body>
     <div id="head">
-        <a href="mainPage.html"><img src="./image/back-button.png"  id="back" align="left"></a>
+        <a href="mainPage.php"><img src="./image/back-button.png"  id="back" align="left"></a>
         Регистрация
     </div>
     <div id="main">
@@ -28,7 +28,7 @@
             <input placeholder="Пароль" name="password">
         </div>
         <p class="gray">&nbsp;Не менее 8 символов</p>
-        <button type="submit">Продолжить</button>
+        <button class="continue" type="submit">Продолжить</button>
     </div>
 </body>
 

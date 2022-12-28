@@ -48,7 +48,7 @@
 </head>
 <body>
     <div id="head">
-        <a href="mainPage.html"><img src="./image/back-button.png" id="back" align="left"></a>
+        <a href="mainPage.php"><img src="./image/back-button.png" id="back" align="left"></a>
         <img src="./image/Logo.png" width="50">
         <span id="title">Мой Банк</span>
     </div>
@@ -68,10 +68,10 @@
         </div>
     </div>
     <div id="footer">
-        <div class="categories">
+        <a href="mainPage.php" class="categories">
             <img src="./image/mainpage.png" width="32px">
             <span>Главная</span>
-        </div>
+        </a>
         <div class="categories">
             <img src="./image/qr.png" width="32px">
             <span>Kaspi QR</span>

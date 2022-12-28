@@ -63,7 +63,7 @@
             <input placeholder="Повторите пароль" name="repeated_password">
         </div>
         <p class="gray">&nbsp;Не менее 8 символов</p>
-        <button type="submit">Продолжить</button>
+        <button class="continue" type="submit">Продолжить</button>
     </div>
 </body>
 
